@@ -10,7 +10,11 @@
     <!-- Include jQuery Easing Plugin AFTER jQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
+<script src="validateForm.js"></script> 
 <script src="FormKwNext.js"></script> 
+<script src="ObliczKontrolna.js"></script>
+<script src="addZeros.js"></script>  
+
 </head>
 
 <body>
@@ -27,9 +31,12 @@
   <fieldset>
     <h2 class="fs-title">Create your account</h2>
     <h3 class="fs-subtitle">This is step 1</h3>
-    <input type="text" name="email" placeholder="Email" />
-    <input type="password" name="pass" placeholder="Password" />
-    <input type="password" name="cpass" placeholder="Confirm Password" />
+    <input type="text" id="Email" name="email" placeholder="Email" />
+    <input type="text" name="input1" id="input1" placeholder="Znak Wydziału Sądu" oninput="this.value = this.value.toUpperCase(); calculateKontrolna();"/> 
+    <input type="text" name="input2" id="input2" placeholder="Numer Księgi Wieczystej" oninput="calculateKontrolna();" onblur="addLeadingZeros();" /> 
+    
+    <p id="result"></p>
+
     <input type="button" name="next" class="next action-button" value="Next" />
   </fieldset>
   <fieldset>
@@ -52,6 +59,8 @@
     <a href="https://twitter.com/GoktepeAtakan" class="submit action-button" target="_top">Submit</a>
   </fieldset>
 </form>
+
+
 
 </body>
 </html>
